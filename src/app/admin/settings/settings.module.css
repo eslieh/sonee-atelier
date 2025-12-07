@@ -1,0 +1,185 @@
+.settings {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.tag {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.content {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  box-shadow: var(--panel-shadow);
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.logoutForm {
+  margin-top: 1rem;
+}
+
+.logoutButton {
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background: rgba(167, 37, 123, 0.1);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .settings {
+    max-width: 100%;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .section {
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .infoGrid {
+    gap: 1rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .value {
+    font-size: 0.95rem;
+  }
+
+  .logoutButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+    width: 100%;
+  }
+}
+

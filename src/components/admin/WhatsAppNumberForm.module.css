@@ -1,0 +1,147 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.input {
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(167, 37, 123, 0.1);
+}
+
+.helpText {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.error {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  font-size: 0.9rem;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.success {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  font-size: 0.9rem;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.submitButton {
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+.submitButton:hover {
+  background: rgba(167, 37, 123, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(167, 37, 123, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .form {
+    gap: 1.25rem;
+  }
+
+  .inputGroup {
+    gap: 0.4rem;
+  }
+
+  .input {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .helpText {
+    font-size: 0.8rem;
+  }
+
+  .submitButton {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.75rem;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .error,
+  .success {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    gap: 1rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .input {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .helpText {
+    font-size: 0.75rem;
+  }
+
+  .submitButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.7rem;
+  }
+}
+

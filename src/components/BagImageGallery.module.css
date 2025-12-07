@@ -1,0 +1,293 @@
+.gallery {
+  position: relative;
+}
+
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--accent-muted);
+  box-shadow: 0 12px 40px rgba(167, 37, 123, 0.12);
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroImageContainer:hover {
+  transform: scale(1.01);
+}
+
+.heroImage {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroImageContainer:hover .heroImage {
+  transform: scale(1.02);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.heroImageContainer:hover .imageOverlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.viewText {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroImageContainer:hover .viewText {
+  opacity: 1;
+}
+
+.imageThumbnails {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.thumbnail {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: var(--panel-bg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(167, 37, 123, 0.3);
+}
+
+.thumbnailImage {
+  object-fit: cover;
+}
+
+.thumbnailOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumbnail:hover .thumbnailOverlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.placeholderImage {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--accent-muted);
+  border-radius: 24px;
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  isolation: isolate;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lightboxContent {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 10000;
+  isolation: isolate;
+}
+
+.lightboxImageContainer {
+  position: relative;
+  width: 100%;
+  max-height: 90vh;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--accent-muted);
+}
+
+.lightboxImage {
+  object-fit: contain;
+}
+
+.closeButton {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10001;
+  backdrop-filter: blur(10px);
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.navButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  position: relative;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.imageCounter {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  z-index: 10001;
+}
+
+@media (max-width: 768px) {
+  .lightboxContent {
+    width: 95%;
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .navButton svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .closeButton {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .closeButton svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .imageCounter {
+    bottom: 1rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .lightboxImageContainer {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lightboxContent {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navButton svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .imageThumbnails {
+    bottom: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .thumbnail {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+  }
+}
+

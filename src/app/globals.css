@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --accent: #a7257b;
+  --accent-soft: #f6b0d7;
+  --accent-muted: #fce1f0;
+  --page-bg: #fcf2f7;
+  --page-gradient: radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.85), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(247, 176, 215, 0.65), transparent 55%),
+    #fcf2f7;
+  --panel-bg: rgba(255, 255, 255, 0.9);
+  --panel-border: rgba(167, 37, 123, 0.15);
+  --panel-shadow: 0 40px 90px rgba(167, 37, 123, 0.15);
+  --text-primary: #2b0d1f;
+  --text-muted: rgba(43, 13, 31, 0.65);
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-border: rgba(167, 37, 123, 0.15);
+  --input-border-focus: rgba(167, 37, 123, 0.45);
+  --input-text: #2b0d1f;
+  --button-gradient: linear-gradient(120deg, #f886c4, #d25598, #a7257b);
+  --error-bg: rgba(217, 71, 130, 0.1);
+  --error-border: rgba(217, 71, 130, 0.35);
+  --error-text: #b4316c;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --accent: #f36fb3;
+  --accent-soft: #cc4e94;
+  --accent-muted: rgba(243, 111, 179, 0.15);
+  --page-bg: #0b0308;
+  --page-gradient: radial-gradient(circle at 20% -5%, rgba(255, 126, 194, 0.35), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(167, 37, 123, 0.45), transparent 55%), #0b0308;
+  --panel-bg: rgba(13, 4, 9, 0.85);
+  --panel-border: rgba(243, 111, 179, 0.25);
+  --panel-shadow: 0 40px 80px rgba(0, 0, 0, 0.65);
+  --text-primary: #fff5fb;
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --input-bg: rgba(9, 3, 7, 0.9);
+  --input-border: rgba(243, 111, 179, 0.2);
+  --input-border-focus: rgba(243, 111, 179, 0.55);
+  --input-text: #ffffff;
+  --button-gradient: linear-gradient(120deg, #ff7ec5, #d84e9c, #a7257b);
+  --error-bg: rgba(255, 64, 131, 0.15);
+  --error-border: rgba(255, 64, 131, 0.35);
+  --error-text: #ff9cc6;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--page-bg);
+  font-family: "Inter", "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,258 @@
+.canvas {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 6rem);
+  margin: -3rem -2rem 0;
+  padding: 4rem 2rem;
+}
+
+.backButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.backButton:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(167, 37, 123, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(167, 37, 123, 0.2);
+}
+
+.backIcon {
+  transition: transform 0.2s ease;
+}
+
+.backButton:hover .backIcon {
+  transform: translateX(-2px);
+}
+
+.glowOne,
+.glowTwo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.glowOne {
+  width: 45vw;
+  height: 45vw;
+  top: -10vw;
+  left: -5vw;
+  background: radial-gradient(circle, rgba(247, 176, 215, 0.8), transparent 70%);
+}
+
+.glowTwo {
+  width: 50vw;
+  height: 50vw;
+  bottom: -15vw;
+  right: -10vw;
+  background: radial-gradient(circle, rgba(167, 37, 123, 0.5), transparent 70%);
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.copy {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--panel-border);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  box-shadow: var(--panel-shadow);
+  color: var(--text-primary);
+}
+
+.tag {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.copy h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.copy p {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .canvas {
+    margin: -2.5rem -1.5rem 0;
+    padding: 3rem 1.5rem;
+  }
+
+  .backButton {
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 0.65rem 1.1rem;
+    font-size: 0.8rem;
+  }
+
+  .layout {
+    gap: 2rem;
+  }
+
+  .copy {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .canvas {
+    margin: -2rem -1rem 0;
+    padding: 2.5rem 1rem;
+    min-height: calc(100vh - 4rem);
+  }
+
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .backIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .copy {
+    order: 2;
+    padding: 1.75rem;
+    border-radius: 1.5rem;
+  }
+
+  .copy h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .canvas {
+    margin: -2rem -1rem 0;
+    padding: 2rem 1rem;
+    padding-top: 4rem;
+  }
+
+  .backButton {
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.7rem;
+  }
+
+  .backIcon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .layout {
+    gap: 1.25rem;
+  }
+
+  .copy {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .copy h1 {
+    margin-top: 0.75rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .copy p {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas {
+    margin: -1.5rem -0.75rem 0;
+    padding: 1.5rem 0.75rem;
+    padding-top: 3.5rem;
+  }
+
+  .backButton {
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.65rem;
+    gap: 0.4rem;
+  }
+
+  .backIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .backButton span {
+    display: none;
+  }
+
+  .glowOne,
+  .glowTwo {
+    filter: blur(100px);
+    opacity: 0.4;
+  }
+
+  .copy {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
+  .copy h1 {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .copy p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+

@@ -1,0 +1,206 @@
+.container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.addButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  background-color: #4f46e5;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #4338ca;
+}
+
+.addButtonIcon {
+  margin-right: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.tableContainer {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.table thead {
+  background-color: #f9fafb;
+}
+
+.table th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 1rem 1.5rem;
+  vertical-align: middle;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.imageCell {
+  width: 40px;
+}
+
+.imageWrapper {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.375rem;
+  object-fit: cover;
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.375rem;
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noImageText {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.bagName {
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+}
+
+.bagDescription {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.status {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+}
+
+.statusAvailable {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.statusUnavailable {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  color: #4f46e5;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s;
+}
+
+.actionButton:hover {
+  background-color: #eef2ff;
+}
+
+.actionButton.delete {
+  color: #ef4444;
+}
+
+.actionButton.delete:hover {
+  background-color: #fef2f2;
+}
+
+.actionIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.emptyState {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.emptyStateLink {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.emptyStateLink:hover {
+  text-decoration: underline;
+}

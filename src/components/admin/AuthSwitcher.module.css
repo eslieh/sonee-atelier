@@ -1,0 +1,92 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tabs {
+  display: inline-flex;
+  background: var(--accent-muted);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(167, 37, 123, 0.25);
+}
+
+:root[data-theme="dark"] .tabs {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(243, 111, 179, 0.25);
+}
+
+.tab {
+  flex: 1;
+  padding: 0.65rem 1.4rem;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+}
+
+.tabIcon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.tab:hover .tabIcon {
+  transform: scale(1.1);
+}
+
+.active {
+  color: var(--text-primary);
+  background: #fff;
+  box-shadow: inset 0 0 15px rgba(167, 37, 123, 0.15);
+}
+
+:root[data-theme="dark"] .active {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 0 15px rgba(243, 111, 179, 0.25);
+}
+
+.formSurface {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    gap: 1.25rem;
+  }
+
+  .tabs {
+    width: 100%;
+  }
+
+  .tab {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    gap: 1rem;
+  }
+
+  .tab {
+    padding: 0.55rem 1rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+}
+

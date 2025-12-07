@@ -1,0 +1,158 @@
+.canvas {
+  min-height: 100vh;
+  background: var(--page-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary);
+}
+
+.utilities {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 3;
+}
+
+.glowOne,
+.glowTwo {
+  position: absolute;
+  filter: blur(140px);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.glowOne {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(249, 184, 220, 0.9), transparent 60%);
+  top: -10vw;
+  left: -5vw;
+}
+
+.glowTwo {
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(167, 37, 123, 0.45), transparent 70%);
+  bottom: -15vw;
+  right: -10vw;
+}
+
+.panel {
+  position: relative;
+  z-index: 2;
+  width: min(70rem, 100%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 3rem;
+  background: var(--panel-bg);
+  border-radius: 2rem;
+  border: 1px solid var(--panel-border);
+  padding: 3.5rem;
+  backdrop-filter: blur(30px);
+  box-shadow: var(--panel-shadow);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.tag {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.heading {
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.body {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 30rem;
+}
+
+.formStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .canvas {
+    padding: 2rem 1rem;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
+
+  .utilities {
+    position: static;
+    margin-bottom: 1.5rem;
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .canvas {
+    padding: 1.5rem 1rem;
+  }
+
+  .panel {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .utilities {
+    position: static;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .heading {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .body {
+    font-size: 0.95rem;
+  }
+
+  .copy {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas {
+    padding: 1rem 0.75rem;
+  }
+
+  .panel {
+    padding: 1.5rem 1rem;
+    border-radius: 1.25rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .body {
+    font-size: 0.9rem;
+  }
+}
+

@@ -1,0 +1,131 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 240px;
+  padding-right: 2rem;
+  border-right: 1px solid var(--panel-border);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  background: rgba(167, 37, 123, 0.05);
+}
+
+.tabActive {
+  color: var(--accent);
+  background: rgba(167, 37, 123, 0.1);
+}
+
+.tabActive::before {
+  content: "";
+  position: absolute;
+  left: -2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.label {
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .tabs {
+    width: 200px;
+    padding-right: 1.5rem;
+  }
+
+  .tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: row;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    border-right: none;
+    border-top: 1px solid var(--panel-border);
+    margin-top: auto;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--panel-bg);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .tab {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+    flex: 1;
+    max-width: 120px;
+  }
+
+  .icon {
+    margin-bottom: 0.25rem;
+  }
+
+  .tabActive::before {
+    display: none;
+  }
+
+  .tabActive::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 0 0 2px 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.65rem;
+    max-width: 100px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+

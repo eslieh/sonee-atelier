@@ -1,0 +1,40 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.switch {
+  width: 3.5rem;
+  height: 2rem;
+  border-radius: 999px;
+  padding: 0.15rem;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.knob {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  padding: 0 0.2rem;
+}
+
+.icon {
+  font-size: 0.9rem;
+}
+
+.label {
+  font-weight: 600;
+}
+
