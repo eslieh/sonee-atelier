@@ -107,6 +107,8 @@ export async function loginWithGoogleAction() {
     },
   });
 
+  console.log("data", data);
+  console.log("error", error);
   if (error || !data.url) {
     const message = error?.message ?? "Unable to start Google sign-in.";
     redirect(`/admin?error=${encodeURIComponent(message)}`);

@@ -117,7 +117,7 @@
   }
 
   .utilities {
-    position: static;
+    position: absolute;
     margin-bottom: 1.5rem;
     width: 100%;
     display: flex;
