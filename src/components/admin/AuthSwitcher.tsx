@@ -4,12 +4,10 @@ import { useState } from "react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { LogIn, UserPlus } from "lucide-react";
-
 import { LoginForm } from "@/components/admin/LoginForm";
 import { SignupForm } from "@/components/admin/SignupForm";
 
 import styles from "./AuthSwitcher.module.css";
-
 type AuthSwitcherProps = {
   initialMode?: "login" | "signup";
   loginError?: string;
