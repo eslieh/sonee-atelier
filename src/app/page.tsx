@@ -5,6 +5,7 @@ import { getSupabaseServerClient } from "@/lib/supabase/server";
 import InteractiveHeader from "@/components/InteractiveHeader";
 import InteractiveHero from "@/components/InteractiveHero";
 import styles from "./page.module.css";
+import HashRedirect from "@/components/hashredirect";
 
 type BagImage = {
   url: string;
@@ -113,6 +114,7 @@ export default async function Home() {
 
   return (
     <div className={styles.page}>
+      <HashRedirect />
       <InteractiveHeader />
 
       <main className={styles.main}>
