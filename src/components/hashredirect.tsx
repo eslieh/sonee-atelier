@@ -9,7 +9,7 @@ export default function HashRedirect() {
     if (hash) {
       // Convert hash (#...) into URL params (?...)
       const params = new URLSearchParams(hash);
-      window.location.href = `/admin/callback?${params.toString()}`;
+      window.location.href = `/admin/callback#` + hash;
     }
   }, []);
 
