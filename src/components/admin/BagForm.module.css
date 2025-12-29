@@ -44,6 +44,67 @@
   color: var(--text-muted);
 }
 
+.shareSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.linkContainer {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.linkInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 1.25rem;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: text;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.linkInput:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(167, 37, 123, 0.2);
+}
+
+.copyButton {
+  padding: 0 1.25rem;
+  border: none;
+  border-radius: 1.25rem;
+  background: var(--accent);
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.copyButton:hover {
+  background-color: var(--accent-hover);
+}
+
+.copyButton:active {
+  transform: translateY(1px);
+}
+
+.copyButton.copied {
+  background-color: var(--success);
+}
+
 .label input,
 .label textarea {
   border: 1px solid var(--input-border);

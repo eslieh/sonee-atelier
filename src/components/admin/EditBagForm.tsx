@@ -374,6 +374,15 @@ export function EditBagForm({ bag }: EditBagFormProps) {
   const uploadsInFlight = uploads.some((item) => item.status === "uploading" || item.status === "pending");
   const canSubmit = uploadedImages.length > 0 && !uploadsInFlight;
 
+  const [isCopied, setIsCopied] = useState(false);
+  const shareableLink = `${window.location.origin}/bag/${bag.id}`;
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(shareableLink);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
+
   return (
     <section className={styles.formPanel}>
       <header>
@@ -383,6 +392,26 @@ export function EditBagForm({ bag }: EditBagFormProps) {
           Modify the silhouette details, pricing, and availability. Add new images or manage existing ones.
         </p>
       </header>
+      <div className={styles.shareSection}>
+        <label className={styles.label}>Shareable Link</label>
+        <div className={styles.linkContainer}>
+          <input
+            type="text"
+            value={shareableLink}
+            readOnly
+            className={styles.linkInput}
+            onClick={(e) => e.currentTarget.select()}
+          />
+          <button
+            type="button"
+            onClick={copyToClipboard}
+            className={clsx(styles.copyButton, isCopied && styles.copied)}
+            title="Copy to clipboard"
+          >
+            {isCopied ? 'Copied!' : 'Copy'}
+          </button>
+        </div>
+      </div>
 
       <motion.form
         ref={formRef}
