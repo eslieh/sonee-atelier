@@ -60,6 +60,8 @@ export default function InteractiveHeader() {
           ? `0 8px 32px rgba(0, 0, 0, ${Math.min(0.12, scrollY / 600)})`
           : "none",
         transformOrigin: "center top",
+        position: "relative",
+        top: 0,
       }}
     >
       <div

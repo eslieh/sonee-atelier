@@ -8,6 +8,7 @@ import { BagImageGallery } from "@/components/BagImageGallery";
 import { ShareButton } from "@/components/ShareButton";
 import styles from "./page.module.css";
 
+
 const currency = new Intl.NumberFormat("en-KE", {
   style: "currency",
   currency: "KES",
