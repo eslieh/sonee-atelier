@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { motion, AnimatePresence } from "framer-motion";
 import { LogIn, UserPlus } from "lucide-react";
@@ -14,7 +14,17 @@ type AuthSwitcherProps = {
 };
 
 export function AuthSwitcher({ initialMode = "login", loginError }: AuthSwitcherProps) {
-  const [mode, setMode] = useState<"login" | "signup">(initialMode);
+  const isProduction = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
+  const [mode, setMode] = useState<"login" | "signup">(
+    isProduction && initialMode === 'signup' ? 'login' : initialMode
+  );
+
+  // Ensure we don't show signup in production even if initialMode is signup
+  useEffect(() => {
+    if (isProduction && mode === 'signup') {
+      setMode('login');
+    }
+  }, [isProduction, mode]);
 
   return (
     <div className={styles.wrapper}>
@@ -29,16 +39,18 @@ export function AuthSwitcher({ initialMode = "login", loginError }: AuthSwitcher
           <LogIn className={styles.tabIcon} size={16} />
           <span>Sign in</span>
         </motion.button>
-        <motion.button
-          type="button"
-          className={clsx(styles.tab, mode === "signup" && styles.active)}
-          onClick={() => setMode("signup")}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          <UserPlus className={styles.tabIcon} size={16} />
-          <span>Create account</span>
-        </motion.button>
+        {!isProduction && (
+          <motion.button
+            type="button"
+            className={clsx(styles.tab, mode === "signup" && styles.active)}
+            onClick={() => setMode("signup")}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <UserPlus className={styles.tabIcon} size={16} />
+            <span>Create account</span>
+          </motion.button>
+        )}
       </div>
 
       <div className={styles.formSurface}>
