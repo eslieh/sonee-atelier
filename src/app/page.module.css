@@ -364,8 +364,9 @@
   }
 
   .hero {
-    min-height: 70vh;
-    padding: 2rem;
+    min-height: 60vh;
+    padding: 1.5rem;
+    margin-top: -5vh;
   }
 
   .collection {

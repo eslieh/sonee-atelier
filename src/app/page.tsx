@@ -43,9 +43,9 @@ async function getAvailableBags(): Promise<BagRecord[]> {
     .select("*")
     .eq("available", true)
     .order("created_at", { ascending: false })
-    .limit(8);
-
+  
   if (error || !data) {
+    console.error("Error fetching bags:", error);
     return [];
   }
 
@@ -69,27 +69,27 @@ async function getAvailableBags(): Promise<BagRecord[]> {
 }
 
 export const metadata: Metadata = {
-  title: "Sonie Atelier | Premium Handcrafted Bags",
-  description: "Discover our curated collection of premium handcrafted carry bags. Each piece is carefully designed and crafted with attention to detail. Shop unique, stylish bags at Sonie Atelier.",
-  keywords: ["handcrafted bags", "premium bags", "carry bags", "leather bags", "Sonie Atelier", "luxury bags", "Kenya bags"],
-  authors: [{ name: "Sonie Atelier" }],
+  title: "Sonee Atelier | Premium Handcrafted Bags",
+  description: "Discover our curated collection of premium handcrafted carry bags. Each piece is carefully designed and crafted with attention to detail. Shop unique, stylish bags at Sonee Atelier.",
+  keywords: ["handcrafted bags", "premium bags", "carry bags", "leather bags", "Sonee Atelier", "luxury bags", "Kenya bags"],
+  authors: [{ name: "Sonee Atelier" }],
   openGraph: {
-    title: "Sonie Atelier | Premium Handcrafted Bags",
+    title: "Sonee Atelier | Premium Handcrafted Bags",
     description: "Discover our curated collection of premium handcrafted carry bags. Each piece is carefully designed and crafted with attention to detail.",
     type: "website",
-    siteName: "Sonie Atelier",
+    siteName: "Sonee Atelier",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Sonie Atelier",
+        alt: "Sonee Atelier",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sonie Atelier | Premium Handcrafted Bags",
+    title: "Sonee Atelier | Premium Handcrafted Bags",
     description: "Discover our curated collection of premium handcrafted carry bags.",
     images: ["/logo.png"],
   },
@@ -122,13 +122,13 @@ export default async function Home() {
 
         <section id="collection" className={styles.collection}>
           <div className={styles.collectionHeader}>
-            <p className={styles.collectionTag}>Collection</p>
-            <h2 className={styles.collectionTitle}>Carry Bag</h2>
+            <p className={styles.collectionTag}>All Bags</p>
+            <h2 className={styles.collectionTitle}>Our Collection</h2>
           </div>
 
           {bags.length === 0 ? (
             <div className={styles.empty}>
-              <p>New silhouettes will appear here soon.</p>
+              <p>No bags available at the moment. Check back soon for new arrivals!</p>
             </div>
           ) : (
             <div className={styles.grid}>
@@ -172,7 +172,7 @@ export default async function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <p className={styles.footerText}>Sonie Atelier</p>
+        <p className={styles.footerText}>Sonee Atelier</p>
       </footer>
     </div>
   );

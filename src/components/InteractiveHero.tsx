@@ -44,9 +44,9 @@ export default function InteractiveHero() {
           opacity: opacity,
         }}
       >
-        <h1 className={styles.heroTitle}>Carry with Confidence</h1>
+        <h1 className={styles.heroTitle}>Grip glamour, stride in couture.</h1>
         <p className={styles.heroSubtitle}>
-          Curated bags crafted for the modern journey. Every silhouette tells a story.
+          Luxury reimagined for the modern muse.
         </p>
         <Link href="#collection" className={styles.ctaButton}>
           Shop now
