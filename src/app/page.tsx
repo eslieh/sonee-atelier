@@ -6,6 +6,7 @@ import InteractiveHeader from "@/components/InteractiveHeader";
 import InteractiveHero from "@/components/InteractiveHero";
 import styles from "./page.module.css";
 import HashRedirect from "@/components/hashredirect";
+import { unstable_noStore as noStore } from 'next/cache';
 
 type BagImage = {
   url: string;
@@ -37,6 +38,7 @@ function getHeroImage(images: BagImage[] | null | undefined) {
 }
 
 async function getAvailableBags(): Promise<BagRecord[]> {
+  noStore();
   const supabase = getSupabaseServerClient();
   const { data, error } = await supabase
     .from("bags")
@@ -107,6 +109,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  metadataBase: new URL("https://www.soneeatelier.com/"),
 };
 
 export default async function Home() {
