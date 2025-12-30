@@ -69,12 +69,12 @@ async function getAvailableBags(): Promise<BagRecord[]> {
 }
 
 export const metadata: Metadata = {
-  title: "Sonee Atelier | Grip glamour, stride in couture. Luxury reimagined for the modern muse.",
+  title: "Sonee Atelier | Grip glamour, stride in couture",
   description: "Luxury reimagined for the modern muse.",
   keywords: ["handcrafted bags", "premium bags", "carry bags", "leather bags", "Sonee Atelier", "luxury bags", "Kenya bags"],
   authors: [{ name: "Sonee Atelier" }],
   openGraph: {
-    title: "Sonee Atelier | Grip glamour, stride in couture. Luxury reimagined for the modern muse.",
+    title: "Sonee Atelier | Grip glamour, stride in couture",
     description: "Luxury reimagined for the modern muse.",
     type: "website",
     siteName: "Sonee Atelier",
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sonee Atelier | Grip glamour, stride in couture. Luxury reimagined for the modern muse.",
+    title: "Sonee Atelier | Grip glamour, stride in couture",
     description: "Luxury reimagined for the modern muse.",
     images: ["/logo.png"],
   },
