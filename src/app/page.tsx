@@ -69,13 +69,13 @@ async function getAvailableBags(): Promise<BagRecord[]> {
 }
 
 export const metadata: Metadata = {
-  title: "Sonee Atelier | Premium Handcrafted Bags",
-  description: "Discover our curated collection of premium handcrafted carry bags. Each piece is carefully designed and crafted with attention to detail. Shop unique, stylish bags at Sonee Atelier.",
+  title: "Sonee Atelier | Grip glamour, stride in couture. Luxury reimagined for the modern muse.",
+  description: "Luxury reimagined for the modern muse.",
   keywords: ["handcrafted bags", "premium bags", "carry bags", "leather bags", "Sonee Atelier", "luxury bags", "Kenya bags"],
   authors: [{ name: "Sonee Atelier" }],
   openGraph: {
-    title: "Sonee Atelier | Premium Handcrafted Bags",
-    description: "Discover our curated collection of premium handcrafted carry bags. Each piece is carefully designed and crafted with attention to detail.",
+    title: "Sonee Atelier | Grip glamour, stride in couture. Luxury reimagined for the modern muse.",
+    description: "Luxury reimagined for the modern muse.",
     type: "website",
     siteName: "Sonee Atelier",
     images: [
@@ -89,8 +89,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sonee Atelier | Premium Handcrafted Bags",
-    description: "Discover our curated collection of premium handcrafted carry bags.",
+    title: "Sonee Atelier | Grip glamour, stride in couture. Luxury reimagined for the modern muse.",
+    description: "Luxury reimagined for the modern muse.",
     images: ["/logo.png"],
   },
   robots: {
