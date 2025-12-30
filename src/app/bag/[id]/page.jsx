@@ -60,7 +60,6 @@ async function getMoreBags(excludeId) {
     .eq("available", true)
     .neq("id", excludeId)
     .order("created_at", { ascending: false })
-    .limit(6);
 
   if (error || !data) {
     return [];
