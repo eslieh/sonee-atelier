@@ -126,7 +126,7 @@ export default async function Home() {
         <section id="collection" className={styles.collection}>
           <div className={styles.collectionHeader}>
             <p className={styles.collectionTag}>All Bags</p>
-            <h2 className={styles.collectionTitle}>Our Curated Collection</h2>
+            <h2 className={styles.collectionTitle}>Our Curated Selection</h2>
           </div>
 
           {bags.length === 0 ? (
