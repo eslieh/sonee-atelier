@@ -67,7 +67,7 @@ export function BagTable({ bags }: { bags: BagRecord[] }) {
       <header className={styles.header}>
         <div>
           <p className={styles.tag}>Collection</p>
-          <h1>Atelier catalog</h1>
+          <h1>Sonee Atelier Catalog</h1>
           <p className={styles.subtitle}>Track every silhouette, availability state, and hero pricing at a glance.</p>
         </div>
         <Link className={styles.cta} href="/admin/add-bag">
