@@ -590,5 +590,11 @@
   .moreCardPrice {
     font-size: 0.85rem;
   }
+  .specItem {
+    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    gap: 9px;
+}
 }
 
