@@ -228,7 +228,7 @@ export default async function BagDetailPage({ params }) {
   const messageParts = [
     `Hello! I'm interested in:`,
     `\n*${bag.name ?? "Untitled bag"}*`,
-    bag.description ? `\n${bag.description}` : "",
+    // bag.description ? `\n${bag.description}` : "",
     bag.color ? `\nColor: ${bag.color}` : "",
     bag.size ? `\nSize: ${bag.size}` : "",
     formattedPrice !== "—" ? `\nPrice: ${formattedPrice}` : "",
