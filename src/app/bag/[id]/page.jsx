@@ -349,9 +349,9 @@ export default async function BagDetailPage({ params }) {
                       <h3 className={styles.moreCardName}>{otherBag.name ?? "Untitled bag"}</h3>
                       <div className={styles.moreCardMeta}>
                         <span className={styles.moreCardPrice}>{formattedBagPrice}</span>
-                        {otherBag.color && (
+                        {/* {otherBag.color && (
                           <span className={styles.moreCardColor}>{otherBag.color}</span>
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </Link>

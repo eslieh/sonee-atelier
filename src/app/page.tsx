@@ -156,14 +156,14 @@ export default async function Home() {
                           <div className={styles.cardPlaceholder} />
                         )}
                       </div>
-                      {bag.description && (
+                      {/* {bag.description && (
                         <p className={styles.cardDescription}>{bag.description}</p>
-                      )}
+                      )} */}
                       <div className={styles.cardMeta}>
                         <span className={styles.cardPrice}>{formattedPrice}</span>
-                        {bag.color && (
+                        {/* {bag.color && (
                           <span className={styles.cardColor}>{bag.color}</span>
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </Link>
