@@ -120,7 +120,7 @@ export async function generateMetadata({ params }) {
   const heroImage = getHeroImage(bag.images);
   const ogImage = heroImage?.url || "/logo.png";
   const bagName = bag.name ?? "Untitled bag";
-  const description = bag.description || `Discover ${bagName} at Sonie Atelier. Premium handcrafted carry bag${bag.color ? ` in ${bag.color}` : ""}${bag.size ? `, size ${bag.size}` : ""}.`;
+  const description = bag.description || `Discover ${bagName} at Sonie Atelier. Premium crafted carry bag${bag.color ? ` in ${bag.color}` : ""}${bag.size ? `, size ${bag.size}` : ""}.`;
   const formattedPrice = bag.pricing ? currency.format(bag.pricing) : null;
   
   // Build full URL for OG image
